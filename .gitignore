@@ -7,3 +7,5 @@ out
 .eslintcache
 *.log*
 logs
+yarn.lock
+opencode.json
