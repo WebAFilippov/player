@@ -1,0 +1,34 @@
+
+import { CircleCheck, Info, LoaderCircle, OctagonX, TriangleAlert } from 'lucide-react'
+import type { ReactNode } from 'react'
+import { Toaster as Sonner } from 'sonner'
+
+type ToasterProps = React.ComponentProps<typeof Sonner> 
+
+const Toaster = ({ ...props }: ToasterProps): ReactNode => {
+  return (
+    <Sonner
+      className="toaster group"
+      icons={{
+        success: <CircleCheck className="size-4" />,
+        info: <Info className="size-4" />,
+        warning: <TriangleAlert className="size-4" />,
+        error: <OctagonX className="size-4" />,
+        loading: <LoaderCircle className="size-4 animate-spin" />
+      }}
+      style={
+        {
+          fontFamily: 'var(--font-sans)',
+          '--normal-bg': 'var(--popover)',
+          '--normal-text': 'var(--popover-foreground)',
+          '--normal-border': 'var(--border)',
+          '--border-radius': 'var(--radius)',
+          zIndex: 5
+        } as React.CSSProperties
+      }
+      {...props}
+    />
+  )
+}
+
+export { Toaster }
