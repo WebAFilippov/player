@@ -1,5 +1,5 @@
 import { useRef, useState, type ReactNode } from 'react'
-import video from '/video.mp4'
+import video from '@/shared/public/video.mp4'
 import { Play } from 'lucide-react'
 
 export const PlayerPage = (): ReactNode => {
